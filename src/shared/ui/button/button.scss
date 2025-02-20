@@ -1,0 +1,17 @@
+@use '@/shared/styles/variables' as *;
+
+.btn {
+	border-radius: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.btn .red {
+	background-color: $red;
+	color: #fff;
+}
+.btn .gray {
+	color: #000;
+	background-color: $gray;
+}

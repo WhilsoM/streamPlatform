@@ -1,1 +1,21 @@
 @use './reset.scss' as *;
+@use '@/shared/styles/variables' as *;
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: $font-inter;
+	background-color: $black;
+	color: $white;
+}
+
+#root {
+	display: flex;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1;
+}

@@ -1,0 +1,18 @@
+@use '@/shared/styles/variables' as *;
+
+.sidebar {
+	width: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav_list {
+	display: flex;
+	flex-direction: column;
+	gap: 33px;
+}
+
+.active {
+	border-bottom: $active-link-red 3px solid;
+}
