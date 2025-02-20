@@ -17,7 +17,7 @@ export const Sidebar = () => {
 				<ul className={s.nav_list}>
 					<li className='nav_list__li'>
 						<NavLink
-							to={'/search-movie'}
+							to={'/search-movies'}
 							className={({ isActive }) => (isActive ? s.active : '')}
 						>
 							<img src={loupeImg} alt='loupe' />
