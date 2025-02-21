@@ -1,0 +1,49 @@
+.buttons {
+	display: flex;
+	justify-content: start;
+	gap: 17px;
+}
+
+.preview_movie {
+	display: flex;
+	width: 100%;
+}
+.preview_movie_info {
+	margin-top: 48px;
+	width: 30%;
+}
+
+.inner {
+	margin-left: 33px;
+}
+
+.info_text {
+	font-weight: 600;
+	font-size: 16px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.preview_movie_img {
+	width: 70%;
+	position: relative;
+}
+
+.shadow_left,
+.shadow_bottom {
+	position: absolute;
+	display: block;
+}
+.shadow_left {
+	top: 0;
+	left: 0;
+	height: 100%;
+}
+
+.shadow_bottom {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}

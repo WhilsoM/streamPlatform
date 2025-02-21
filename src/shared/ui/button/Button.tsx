@@ -1,5 +1,7 @@
+import './button.scss'
+
 type Button = {
-	onClick: () => void
+	onClick?: () => void
 	color: 'red' | 'gray'
 	children: React.ReactNode
 }

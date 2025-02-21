@@ -5,9 +5,22 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width: fit-content;
+	padding: 10px 15px;
+	border: 0;
+	cursor: pointer;
+	transition: opacity 0.3s ease;
+	font-size: 17px;
+	&:hover {
+		opacity: 0.8;
+	}
+
+	&:focus {
+		opacity: 0.8;
+	}
 }
 
-.btn .red {
+.red {
 	background-color: $red;
 	color: #fff;
 }

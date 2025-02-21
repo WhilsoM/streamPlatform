@@ -10,9 +10,15 @@
 .nav_list {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	gap: 33px;
 }
 
 .active {
 	border-bottom: $active-link-red 3px solid;
+}
+
+.nav_list__link {
+	width: 35px;
 }

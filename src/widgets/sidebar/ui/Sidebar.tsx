@@ -20,7 +20,7 @@ export const Sidebar = () => {
 							to={'/search-movies'}
 							className={({ isActive }) => (isActive ? s.active : '')}
 						>
-							<img src={loupeImg} alt='loupe' />
+							<img src={loupeImg} alt='loupe' className={s.nav_list__link} />
 						</NavLink>
 					</li>
 					<li>
@@ -28,7 +28,7 @@ export const Sidebar = () => {
 							to={'/'}
 							className={({ isActive }) => (isActive ? s.active : '')}
 						>
-							<img src={homeImg} alt='home' />
+							<img src={homeImg} alt='home' className={s.nav_list__link} />
 						</NavLink>
 					</li>
 					<li>
@@ -36,7 +36,11 @@ export const Sidebar = () => {
 							to={'/premier'}
 							className={({ isActive }) => (isActive ? s.active : '')}
 						>
-							<img src={premierImg} alt='premier' />
+							<img
+								src={premierImg}
+								alt='premier'
+								className={s.nav_list__link}
+							/>
 						</NavLink>
 					</li>
 					<li>
@@ -44,7 +48,7 @@ export const Sidebar = () => {
 							to={'/tv'}
 							className={({ isActive }) => (isActive ? s.active : '')}
 						>
-							<img src={tvImg} alt='tv' />
+							<img src={tvImg} alt='tv' className={s.nav_list__link} />
 						</NavLink>
 					</li>
 					<li>
@@ -52,7 +56,7 @@ export const Sidebar = () => {
 							to={'/trends'}
 							className={({ isActive }) => (isActive ? s.active : '')}
 						>
-							<img src={trendsImg} alt='trends' />
+							<img src={trendsImg} alt='trends' className={s.nav_list__link} />
 						</NavLink>
 					</li>
 					<li>
@@ -60,7 +64,7 @@ export const Sidebar = () => {
 							to={'/plus'}
 							className={({ isActive }) => (isActive ? s.active : '')}
 						>
-							<img src={plusImg} alt='plus' />
+							<img src={plusImg} alt='plus' className={s.nav_list__link} />
 						</NavLink>
 					</li>
 					<li>
@@ -68,7 +72,7 @@ export const Sidebar = () => {
 							to={'/share'}
 							className={({ isActive }) => (isActive ? s.active : '')}
 						>
-							<img src={shareImg} alt='share' />
+							<img src={shareImg} alt='share' className={s.nav_list__link} />
 						</NavLink>
 					</li>
 				</ul>
