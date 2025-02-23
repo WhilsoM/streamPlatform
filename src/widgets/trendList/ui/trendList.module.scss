@@ -1,0 +1,11 @@
+.premieres {
+	&_wrapper {
+		display: flex;
+
+		gap: 10px;
+	}
+	img {
+		width: 145px;
+		height: 207px;
+	}
+}

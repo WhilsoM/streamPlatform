@@ -1,5 +1,6 @@
+import { fetchApiData } from '@/features/fetchApiData'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-type TMovie = {
+export type TMovie = {
 	kinopoiskId: number
 	nameRu: string
 	year: number
@@ -15,22 +16,10 @@ export const fetchMovies = createAsyncThunk(
 	'movies/fetchMovies',
 	async (_, { rejectWithValue }) => {
 		try {
-			const response = await fetch(
-				`${import.meta.env.VITE_API_URL}/api/v2.2/films`,
-				{
-					method: 'GET',
-					headers: {
-						'X-API-KEY': import.meta.env.VITE_X_API_KEY,
-						'Content-Type': 'application/json',
-					},
-				}
-			)
-
-			return await response.json()
+			const res = await fetchApiData('v2.2/films')
+			return res
 		} catch (error) {
-			console.error('Ошибка загрузки:', error)
-			const err = error as Error
-			return rejectWithValue(err.message || 'Неизвестная ошибка')
+			return rejectWithValue((error as Error).message || 'Неизвестная ошибка')
 		}
 	}
 )

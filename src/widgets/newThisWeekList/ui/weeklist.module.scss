@@ -5,13 +5,25 @@
 		gap: 9px;
 		flex-wrap: wrap;
 	}
+}
 
-	button {
-		cursor: pointer;
-		.arrow_right {
-			position: absolute;
-			right: 20px;
-			top: 50%;
+.arrow_right_btn {
+	cursor: pointer;
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	display: inline-block;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	&:focus {
+		opacity: 0.8;
+	}
+	.arrow_right {
+		transition: opacity 0.3s ease;
+
+		&:hover {
+			opacity: 0.8;
 		}
 	}
 }

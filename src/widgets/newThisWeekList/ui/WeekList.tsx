@@ -10,6 +10,7 @@ export const WeekList = () => {
 		(state: RootState) => state.movies
 	)
 	const dispatch = useDispatch<AppDispatch>()
+	const limitedMovies = movies?.items?.slice(0, 12)
 
 	useEffect(() => {
 		dispatch(fetchMovies())
@@ -28,7 +29,7 @@ export const WeekList = () => {
 			<h2 className='section-title'>New this week</h2>
 
 			<section className={s.week_list_wrapper}>
-				{movies?.items?.map((movie) => (
+				{limitedMovies?.map((movie) => (
 					<article key={movie.kinopoiskId}>
 						<img
 							src={movie.posterUrlPreview}
@@ -40,7 +41,7 @@ export const WeekList = () => {
 				))}
 			</section>
 
-			<button>
+			<button className={s.arrow_right_btn}>
 				<img className={s.arrow_right} src={arrowRightImg} alt='arrow right' />
 			</button>
 		</section>

@@ -6,6 +6,7 @@ import shadowLeftImg from '@/shared/assets/images/shadow-left.png'
 
 import { Button } from '@/shared/ui/button/Button'
 import { WeekList } from '@/widgets/newThisWeekList/'
+import { TrendList } from '@/widgets/trendList'
 import s from './home.module.scss'
 
 export const Home = () => {
@@ -47,6 +48,8 @@ export const Home = () => {
 			</div>
 
 			<WeekList />
+
+			<TrendList />
 		</>
 	)
 }
