@@ -1,0 +1,17 @@
+.week_list {
+	position: relative;
+	&_wrapper {
+		display: flex;
+		gap: 9px;
+		flex-wrap: wrap;
+	}
+
+	button {
+		cursor: pointer;
+		.arrow_right {
+			position: absolute;
+			right: 20px;
+			top: 50%;
+		}
+	}
+}

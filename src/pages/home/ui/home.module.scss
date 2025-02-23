@@ -7,10 +7,10 @@
 .preview_movie {
 	display: flex;
 	width: 100%;
-}
-.preview_movie_info {
-	margin-top: 48px;
-	width: 30%;
+	&_info {
+		margin-top: 48px;
+		width: 30%;
+	}
 }
 
 .inner {
@@ -29,12 +29,15 @@
 .preview_movie_img {
 	width: 70%;
 	position: relative;
+
+	.preview_movie_ {
+		width: 100%;
+	}
 }
 
 .shadow_left,
 .shadow_bottom {
 	position: absolute;
-	display: block;
 }
 .shadow_left {
 	top: 0;
@@ -46,4 +49,9 @@
 	bottom: 0;
 	left: 0;
 	width: 100%;
+	display: block;
+
+	& > img {
+		width: 100%;
+	}
 }

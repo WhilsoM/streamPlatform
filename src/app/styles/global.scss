@@ -18,8 +18,15 @@ body {
 
 main {
 	flex: 1;
+	margin-left: 150px;
 }
 
 .red_text {
 	color: $red;
+}
+
+.section-title {
+	font-size: 25px;
+	font-weight: 700;
+	margin-bottom: 10px;
 }

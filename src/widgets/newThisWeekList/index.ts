@@ -1,1 +1,1 @@
-export { NewThisWeekList } from './ui/NewThisWeekList.tsx'
+export { WeekList } from './ui/WeekList.tsx'
