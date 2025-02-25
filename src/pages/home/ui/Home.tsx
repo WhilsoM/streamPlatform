@@ -31,8 +31,8 @@ export const Home = () => {
 				</div>
 
 				<div className={s.preview_movie_img}>
-					<div className={s.shadow_left}>
-						<img src={shadowLeftImg} alt='shadow left' />
+					<div>
+						<img className={s.shadow_left} src={shadowLeftImg} alt='shadow left' />
 					</div>
 					<div className={s.shadow_bottom}>
 						<img src={shadowBottomImg} alt='shadow bottom' />
