@@ -13,8 +13,8 @@ export const TrendList = () => {
 
 	useEffect(() => {
 		dispatch(fetchPremieres())
-	}, [dispatch])
-	//  в чем проблема вс код на винде 11 не сразу переименовывается папка в реакте ts
+	}, [])
+
 	return (
 		<section className={s.premieres}>
 			<h2 className='section-title'>Trending Now</h2>

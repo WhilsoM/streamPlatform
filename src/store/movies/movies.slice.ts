@@ -4,19 +4,20 @@ export type TMovie = {
 	kinopoiskId: number
 	nameRu: string
 	year: number
-	ratingImdb: number
+	ratingKinopoisk: number
 	posterUrl: string
 	posterUrlPreview: string
+	description: string
 }
-type TMovies = {
+export type TMovies = {
 	items: TMovie[]
 }
 
-export const fetchMovies = createAsyncThunk(
-	'movies/fetchMovies',
-	async (_, { rejectWithValue }) => {
+export const fetchMovieById = createAsyncThunk(
+	'movies/fetchMovieById',
+	async (id: string, { rejectWithValue }) => {
 		try {
-			const res = await fetchApiData('v2.2/films')
+			const res = await fetchApiData(`v2.2/films/${id}`)
 			return res
 		} catch (error) {
 			return rejectWithValue((error as Error).message || 'Неизвестная ошибка')
@@ -24,31 +25,31 @@ export const fetchMovies = createAsyncThunk(
 	}
 )
 
-const moviesSlice = createSlice({
+const movieSlice = createSlice({
 	name: 'movies',
 	initialState: {
 		isLoading: false,
 		error: null as string | null,
-		movies: {} as TMovies,
+		movie: {} as TMovie,
 	},
 	reducers: {},
 	extraReducers: (builder) => {
 		builder
-			.addCase(fetchMovies.pending, (state) => {
+			.addCase(fetchMovieById.pending, (state) => {
 				state.isLoading = true
 				state.error = null
 			})
-			.addCase(fetchMovies.fulfilled, (state, action) => {
+			.addCase(fetchMovieById.fulfilled, (state, action) => {
 				state.isLoading = false
 
-				state.movies = action.payload ?? { items: [] }
+				state.movie = action.payload ?? {}
 			})
-			.addCase(fetchMovies.rejected, (state, action) => {
+			.addCase(fetchMovieById.rejected, (state, action) => {
 				state.isLoading = false
 				state.error = (action.payload as string) || 'Ошибка загрузки данных'
-				state.movies = { items: [] }
+				state.movie = {} as TMovie
 			})
 	},
 })
 
-export const moviesReducer = moviesSlice.reducer
+export const movieReducer = movieSlice.reducer
