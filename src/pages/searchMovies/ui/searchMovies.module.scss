@@ -1,0 +1,36 @@
+@use '@/shared/styles/variables' as *;
+
+.search_movie_input_wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	padding: 40px 10px;
+}
+
+.search_movie_input {
+	padding: 10px 15px;
+	background-color: transparent;
+	border: 1px solid $white;
+	border-radius: 5px;
+	color: $white;
+}
+.button_search_movie {
+	width: auto;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.search_movie_result {
+	font-size: 20px;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.search_movies_wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}

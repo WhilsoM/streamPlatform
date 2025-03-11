@@ -5,7 +5,6 @@ import s from './movieInfoById.module.scss'
 export const MovieInfoById = () => {
 	const { id } = useParams()
 	const idNumber = Number(id)
-	console.log(id)
 
 	return (
 		<section className={s.movie_info}>

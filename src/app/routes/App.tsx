@@ -1,5 +1,6 @@
 import { Home } from '@/pages/home/'
 import { MovieInfoById } from '@/pages/movieInfoById/'
+import { Profile } from '@/pages/profile/'
 import { SearchMovies } from '@/pages/searchMovies/'
 import { Route, Routes } from 'react-router'
 import { Layout } from './Layout.tsx'
@@ -11,6 +12,7 @@ export const App = () => {
 				<Route index element={<Home />} />
 				<Route path='search-movies' element={<SearchMovies />} />
 				<Route path='/movies/:id' element={<MovieInfoById />} />
+				<Route path='/profile' element={<Profile />} />
 			</Route>
 		</Routes>
 	)
