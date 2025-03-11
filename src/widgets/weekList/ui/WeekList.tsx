@@ -3,10 +3,12 @@ import s from './weeklist.module.scss'
 
 import { fetchApiData } from '@/features/fetchApiData'
 import arrowRightImg from '@/shared/assets/images/arrow-right.svg'
-import { TMovies } from '@/store/movies/movies.slice'
+
+import { TMovies } from '@/types'
 import { Link } from 'react-router'
+
 export const WeekList = () => {
-	const [movies, setMovies] = useState<TMovies>({ items: [] })
+	const [movies, setMovies] = useState<TMovies>()
 
 	useEffect(() => {
 		fetchMovies()
@@ -21,7 +23,7 @@ export const WeekList = () => {
 		<section className={s.week_list}>
 			<h2 className='section-title'>New this week</h2>
 			<section className={s.week_list_wrapper}>
-				{movies.items.slice(0, 10)?.map((movie) => (
+				{movies?.items.slice(0, 10)?.map((movie) => (
 					<article key={movie.kinopoiskId}>
 						<Link to={`/movies/${movie.kinopoiskId}`}>
 							<img

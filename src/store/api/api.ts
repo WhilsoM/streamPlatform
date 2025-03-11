@@ -1,14 +1,8 @@
+import { TMovie, TMovies } from '@/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-export type TMovieItem = {
-	title: string
-	posterUrlPreview: string
-	year: number
-	ratingKinopoisk: number
-	description: string
-}
 
-export const movieByIdApi = createApi({
-	reducerPath: 'movieByIdApi',
+export const movieApi = createApi({
+	reducerPath: 'movieApi',
 	baseQuery: fetchBaseQuery({
 		baseUrl: import.meta.env.VITE_API_URL,
 		prepareHeaders: (headers) => {
@@ -18,10 +12,13 @@ export const movieByIdApi = createApi({
 	}),
 	keepUnusedDataFor: 240,
 	endpoints: (build) => ({
-		getMovieById: build.query<TMovieItem, number>({
+		getMovieById: build.query<TMovie, number>({
 			query: (id) => `/api/v2.2/films/${id}`,
+		}),
+		getMovies: build.query<TMovies, void>({
+			query: () => `/api/v2.2/films`,
 		}),
 	}),
 })
 
-export const { useGetMovieByIdQuery } = movieByIdApi
+export const { useGetMovieByIdQuery, useGetMoviesQuery } = movieApi

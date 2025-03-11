@@ -7,7 +7,7 @@ import s from './trendList.module.scss'
 export const TrendList = () => {
 	const dispatch = useDispatch<AppDispatch>()
 	const { premieres, isLoading, error } = useSelector(
-		(state: RootState) => state.premieres
+		(state: RootState) => state.premiers
 	)
 	const limitedPremieres = premieres?.items?.slice(0, 12)
 

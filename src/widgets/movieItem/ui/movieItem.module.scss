@@ -5,7 +5,6 @@
 		gap: 30px;
 		background-color: #222222;
 		border-radius: 5px;
-		width: fit-content;
 	}
 }
 .movie_info {
@@ -14,16 +13,14 @@
 .title {
 	font-size: 35px;
 	font-weight: 700;
-	margin-bottom: 15px;
+	margin-bottom: 25px;
 }
 
-.year,
-.rating,
-.description {
-	font-size: 20px;
-	margin-bottom: 10px;
-}
 .description {
 	width: 70rem;
 	line-height: 1.4;
+}
+.movie_info_text {
+	font-size: 20px;
+	margin-bottom: 20px;
 }

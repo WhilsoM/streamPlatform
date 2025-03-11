@@ -1,17 +1,21 @@
 import { useGetMovieByIdQuery } from '@/store/api/api'
-import { memo, useEffect, useRef } from 'react'
+import { memo } from 'react'
 import s from './movieItem.module.scss'
 
 export const MovieItem = memo(({ movieId }: { movieId: number }) => {
 	const { data, isLoading, error } = useGetMovieByIdQuery(movieId)
-	const renderCount = useRef(0)
 
-	useEffect(() => {
-		renderCount.current += 1
-		console.log('Component re-rendered:', renderCount.current)
-	})
 	if (data === undefined) return
-	const { description, posterUrlPreview, ratingKinopoisk, title, year } = data
+	const {
+		description,
+		posterUrlPreview,
+		ratingKinopoisk,
+		nameRu,
+		year,
+		slogan,
+		filmLength,
+		ratingAgeLimits,
+	} = data
 
 	return (
 		<section className={`${s.movie_item}`}>
@@ -21,18 +25,31 @@ export const MovieItem = memo(({ movieId }: { movieId: number }) => {
 				{data && (
 					<>
 						<div>
-							<img src={posterUrlPreview} alt={title} width={500} />
+							<img src={posterUrlPreview} alt={nameRu} width={500} />
 						</div>
 						<div className={s.movie_info}>
-							<h3 className={s.title}>{title}</h3>
-							<p className={s.year}>год создания: {year}</p>
-							<p className={s.rating}>рейтинг кинопоиск: {ratingKinopoisk}</p>
-							{description && (
-								<>
-									<p className={s.description}>Описание фильма: </p>
-									<p className={s.description}>{description}</p>
-								</>
-							)}
+							<h3 className={`${s.title}`}>{nameRu}</h3>
+							<p className={`${s.movie_info_text} ${s.year}`}>
+								год создания: {year ? year : '-'}
+							</p>
+							<p className={`${s.movie_info_text} ${s.rating}`}>
+								рейтинг кинопоиск: {ratingKinopoisk ? ratingKinopoisk : '-'}
+							</p>
+
+							<p className={`${s.movie_info_text} ${s.description}`}>
+								Описание: {description ? description : '-'}
+							</p>
+
+							<p className={`${s.movie_info_text} ${s.slogan}`}>
+								Слоган: &quot;{slogan ? slogan : '-'}&quot;
+							</p>
+							<p className={`${s.movie_info_text} ${s.duration}`}>
+								Продолжительность: {filmLength ? filmLength : '-'}
+							</p>
+							<p className={`${s.movie_info_text} ${s.ratingAgeLimits}`}>
+								Возрастное ограничение:
+								{ratingAgeLimits ? `${ratingAgeLimits.slice(3)}+` : ' нету'}
+							</p>
 						</div>
 					</>
 				)}

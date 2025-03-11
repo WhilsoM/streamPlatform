@@ -15,6 +15,7 @@ export const fetchApiData = async (api: string) => {
 		if (!response.ok) {
 			throw new Error('Ошибка при загрузке фильмов')
 		}
+
 		return await response.json()
 	} catch (error) {
 		console.error('Ошибка загрузки:', error)

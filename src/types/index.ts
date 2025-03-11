@@ -1,1 +1,1 @@
-export type {} from ''
+export type { TMovie, TMovies } from './types.ts'
